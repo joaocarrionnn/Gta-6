@@ -113,9 +113,9 @@ Assistente: Segundo os vazamentos, esperamos o novo "Virtue" (elétrico super r�
 MIT License - Projeto para fins educacionais e demonstrativos.
 
 ## ✉️ **Contato**
-Desenvolvido por [Seu Nome]  
-Email: seu@email.com  
-GitHub: @seu-usuario
+Desenvolvido por João Carrion 😎 
+Email: Joaomiguelcg54@gmail.com
+GitHub: @joaocarrionnn
 
 ---
 
