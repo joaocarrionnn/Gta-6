@@ -1,6 +1,5 @@
 # 📜 **GTA 6 - Assistente Virtual com IA Gemini**
 
-![Uploading image.png…]()
 
 
 Um portal interativo para fãs de GTA 6 com chatbot integrado à inteligência artificial do Google Gemini.
