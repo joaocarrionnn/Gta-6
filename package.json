@@ -1,0 +1,21 @@
+{
+  "name": "projetomvc",
+  "version": "1.0.0",
+  "description": "demonstração do padrao mvc",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "MVC"
+  ],
+  "author": "João Carrion",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
