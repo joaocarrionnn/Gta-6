@@ -5,7 +5,7 @@ const path = require("path");
 class Server {
   constructor() {
     this.app = express();
-    this.porta = 4091;
+    this.porta = process.env.PORT || 4091;
     this.genAI = new GoogleGenerativeAI("AIzaSyADWvC_T82w9GtoVtdTTcMD5fBSCIAoVbU"); 
 
     // Middleware para parsear JSON
