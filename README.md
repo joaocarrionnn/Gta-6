@@ -77,7 +77,7 @@ gtavi-portal/
    http://localhost:4091
    ```
 
-## 🌈 **Personalização**
+## ✏️ **Personalização**
 
 ### **Cores do Tema**
 Edite em `public/css/chatbot.css`:
