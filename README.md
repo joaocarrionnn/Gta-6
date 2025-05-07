@@ -1,6 +1,7 @@
-# 📜 **GTA 6 Fan Portal - Assistente Virtual com IA Gemini**
+# 📜 **GTA 6 - Assistente Virtual com IA Gemini**
 
-![Preview do Projeto](https://via.placeholder.com/800x400/111/ff0000?text=GTA6+Portal+Preview)
+![Uploading image.png…]()
+
 
 Um portal interativo para fãs de GTA 6 com chatbot integrado à inteligência artificial do Google Gemini.
 
