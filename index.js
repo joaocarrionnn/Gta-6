@@ -18,10 +18,7 @@ class Server {
 
   configurarViews() {
     // Define o diretório de views (caminho absoluto)
-    this.app.set("views", [
-      path.join(__dirname, "mvc", "views"),
-      path.join(__dirname, "views") // Fallback adicional
-    ]);
+    this.app.set("views", path.join(__dirname, "mvc", "views"));
     
     // Define EJS como a view engine
     this.app.set("view engine", "ejs");
