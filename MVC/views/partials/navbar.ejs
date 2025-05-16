@@ -1,0 +1,61 @@
+
+
+
+
+
+<nav class="bg-gray-900/80 backdrop-blur-md border-b border-gray-700 fixed w-full z-50 p-4 transition-all duration-300 hover:bg-gray-900">
+  <div class="container mx-auto flex justify-between items-center">
+    <!-- Logo e Nome -->
+    <div class="flex items-center space-x-3 group">
+      <img src="/images/logo-nav.webp" alt="GTA 6 Logo" class="w-8 h-8 group-hover:rotate-12 transition-transform">
+      <span class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 to-yellow-500 bg-clip-text text-transparent">
+        GTA VI
+      </span>
+    </div>
+
+    <!-- Links Desktop -->
+    <div class="hidden md:flex space-x-8 items-center">
+      <a href="#" class="nav-link relative group">
+        <span class="text-white group-hover:text-red-500 transition">Início</span>
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a href="#" class="nav-link relative group">
+        <span class="text-white group-hover:text-red-500 transition">Notícias</span>
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a href="#" class="nav-link relative group">
+        <span class="text-white group-hover:text-red-500 transition">Galeria</span>
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a href="#" class="nav-link relative group">
+        <span class="text-white group-hover:text-red-500 transition">FAQ</span>
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <button class="ml-4 btn btn-sm btn-primary bg-red-600 hover:bg-red-700 border-none px-4 py-2 rounded-full transition-transform hover:scale-105">
+        Pré-venda <i class="fas fa-arrow-right ml-1"></i>
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-white hover:text-red-500 focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu Mobile Expandido -->
+  <div id="mobile-menu" class="md:hidden hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 px-6 shadow-lg">
+    <div class="flex flex-col space-y-4">
+      <a href="#" class="text-white hover:text-red-500 py-2 border-b border-gray-700 transition">Início</a>
+      <a href="#" class="text-white hover:text-red-500 py-2 border-b border-gray-700 transition">Notícias</a>
+      <a href="#" class="text-white hover:text-red-500 py-2 border-b border-gray-700 transition">Galeria</a>
+      <a href="#" class="text-white hover:text-red-500 py-2 border-b border-gray-700 transition">FAQ</a>
+      <button class="btn btn-primary bg-red-600 hover:bg-red-700 border-none mt-2 w-full">
+        Pré-venda
+      </button>
+    </div>
+  </div>
+</nav>
+
+
