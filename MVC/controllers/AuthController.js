@@ -36,6 +36,40 @@ class AuthController {
                 return res.redirect('/login?error=Erro no servidor');
             }
         });
+
+        // Rota para exibir o formulário de cadastro
+        this.app.get("/cadastro", (req, res) => {
+            res.render("Auth/cadastro", {
+                error: req.query.error,
+                usuario: req.query.usuario || ''
+            });
+        });
+
+        // Rota para processar o cadastro
+        this.app.post("/cadastro", async (req, res) => {
+            const { usuario, senha } = req.body;
+            
+            try {
+                // Verifica se o usuário já existe
+                const existe = await this.authModel.usuarioExiste(usuario);
+                if (existe) {
+                    return res.redirect(`/cadastro?error=Usuário já existe&usuario=${encodeURIComponent(usuario)}`);
+                }
+                
+                // Tenta cadastrar o novo usuário
+                const cadastrado = await this.authModel.cadastrarUsuario(usuario, senha);
+                
+                if (cadastrado) {
+                    // Cadastro bem-sucedido - redireciona para o login com mensagem de sucesso
+                    return res.redirect('/login?success=Cadastro realizado com sucesso! Faça login.');
+                } else {
+                    return res.redirect('/cadastro?error=Erro ao cadastrar usuário');
+                }
+            } catch (error) {
+                console.error('Erro no cadastro:', error);
+                return res.redirect('/cadastro?error=Erro no servidor');
+            }
+        });
     }
 }
 
