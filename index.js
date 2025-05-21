@@ -25,14 +25,6 @@ class Server {
   }
 
   configMiddleware() {
-    // Configuração básica de sessão
-    this.app.use(session({
-      secret: 'sua_chave_secreta_aqui',
-      resave: false,
-      saveUninitialized: true,
-      cookie: { secure: false }
-    }));
-
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.static(path.join(__dirname, "mvc", "views", "public")));
     this.app.use(express.json());
