@@ -6,7 +6,10 @@ class HomeController {
 
   routes() {
     this.app.get("/", (req, res) => {
-      res.render("Home/index"); // Assumindo que seu index.ejs está em mvc/views/Home/
+      if (!req.session.usuario) {
+        return res.redirect('/login');
+      }
+      res.render("Home/index", { usuario: req.session.usuario });
     });
   }
 }

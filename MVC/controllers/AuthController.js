@@ -9,8 +9,21 @@ class AuthController {
     }
 
     authRoutes() {
+        // Middleware para verificar autenticação
+        this.app.use((req, res, next) => {
+            const allowedPaths = ['/login', '/cadastro'];
+            if (allowedPaths.includes(req.path) || req.session.usuario) {
+                next();
+            } else {
+                res.redirect('/login');
+            }
+        });
+
         // Rota para exibir o formulário de login
         this.app.get("/login", (req, res) => {
+            if (req.session.usuario) {
+                return res.redirect('/');
+            }
             res.render("Auth/login", { 
                 error: req.query.error,
                 usuario: req.query.usuario || ''
@@ -25,16 +38,23 @@ class AuthController {
                 const credenciaisValidas = await this.authModel.verificarCredenciais(usuario, senha);
                 
                 if (credenciaisValidas) {
-                    // Credenciais válidas - redireciona para a página principal
+                    // Credenciais válidas - cria a sessão e redireciona
+                    req.session.usuario = usuario;
                     return res.redirect("/");
                 } else {
-                    // Credenciais inválidas - volta para o login com mensagem de erro
+                    // Credenciais inválidas
                     return res.redirect(`/login?error=Credenciais inválidas&usuario=${encodeURIComponent(usuario)}`);
                 }
             } catch (error) {
                 console.error('Erro no login:', error);
                 return res.redirect('/login?error=Erro no servidor');
             }
+        });
+
+        // Rota para logout
+        this.app.get("/logout", (req, res) => {
+            req.session.destroy();
+            res.redirect('/login');
         });
 
         // Rota para exibir o formulário de cadastro
@@ -50,18 +70,17 @@ class AuthController {
             const { usuario, senha } = req.body;
             
             try {
-                // Verifica se o usuário já existe
                 const existe = await this.authModel.usuarioExiste(usuario);
                 if (existe) {
                     return res.redirect(`/cadastro?error=Usuário já existe&usuario=${encodeURIComponent(usuario)}`);
                 }
                 
-                // Tenta cadastrar o novo usuário
                 const cadastrado = await this.authModel.cadastrarUsuario(usuario, senha);
                 
                 if (cadastrado) {
-                    // Cadastro bem-sucedido - redireciona para o login com mensagem de sucesso
-                    return res.redirect('/login?success=Cadastro realizado com sucesso! Faça login.');
+                    // Após cadastrar, já cria a sessão e redireciona
+                    req.session.usuario = usuario;
+                    return res.redirect('/');
                 } else {
                     return res.redirect('/cadastro?error=Erro ao cadastrar usuário');
                 }

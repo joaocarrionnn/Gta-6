@@ -3,474 +3,889 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GTA VI</title>
+  <title>GTA VI - Tudo sobre o próximo Grand Theft Auto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="/images/logo-nav.webp" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/chatbot.css">
+  <style>
+    /* Estilos para as animações */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .animate-on-scroll.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .animate-fade-in {
+      opacity: 0;
+      transition: opacity 0.8s ease-out;
+    }
+    
+    .animate-fade-in.animated {
+      opacity: 1;
+    }
+    
+    .animate-scale-in {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .animate-scale-in.animated {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .animate-from-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .animate-from-left.animated {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .animate-from-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .animate-from-right.animated {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Animação especial para a hero section */
+    .animate-fade-in-zoom {
+      animation: fadeInZoom 2s ease-out forwards;
+    }
+    
+    @keyframes fadeInZoom {
+      from {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-900 text-white">
 
 
+  
   <!-- navbar -->
   <%- include('../partials/navbar') %>
 
-  <section class="relative h-screen flex items-center justify-center bg-[url('/images/gta6-bg.jpg')] bg-cover bg-center bg-no-repeat overflow-hidden">
-    <!-- Overlay Gradiente -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80"></div>
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <img src="/images/Jason_and_Lucia_02_With_Logos_landscape.jpg" 
+         alt="Jason e Lucia" 
+         class="main-image absolute w-full h-full object-cover animate-fade-in-zoom">
+    <div class="absolute inset-0 bg-black/10"></div>
+  </section>
+
+ <!-- Sobre o Jogo -->
+<section class="py-24 px-6 bg-gradient-to-b from-gray-900 to-gray-800">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="text-5xl font-bold text-gold-400 font-bebas tracking-wide">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">SOBRE O JOGO</span>
+      </h2>
+      <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full"></div>
+    </div>
     
-    <!-- Efeito de Partículas -->
-    <div class="absolute inset-0 bg-[url('/images/particle-effect.png')] opacity-20"></div>
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="space-y-10 animate-from-left">
+        <div class="group">
+          <h3 class="text-3xl font-bold mb-4 text-white flex items-center">
+            <span class="w-4 h-4 bg-yellow-500 mr-3 transition-all group-hover:w-6"></span>
+            A Dupla Dinâmica
+          </h3>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Pela primeira vez na série principal, GTA VI apresenta dois protagonistas: Jason e Lucia, um casal de criminosos 
+            inspirado em Bonnie e Clyde. Alterne entre eles durante missões ou explore Vice City livremente com quem preferir.
+          </p>
+        </div>
+        
+        <div class="group pt-6">
+          <h3 class="text-3xl font-bold mb-4 text-white flex items-center">
+            <span class="w-4 h-4 bg-yellow-500 mr-3 transition-all group-hover:w-6"></span>
+            Ambientação
+          </h3>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            De volta à icônica Vice City, agora radicalmente expandida para incluir áreas inspiradas no sul da Flórida moderna. 
+            Explore desde os perigosos Everglades até praias luxuosas e uma versão fictícia das Keys, tudo com detalhes impressionantes.
+          </p>
+        </div>
+      </div>
+      
+      <div class="flex justify-center transform hover:scale-[1.02] transition duration-500 animate-from-right">
+        <video 
+          controls
+          muted
+          autoplay
+          loop
+          playsinline
+          class="rounded-xl shadow-2xl max-h-[500px] border-4 border-yellow-500/20 hover:border-yellow-500/40 transition-all"
+          aria-label="Gameplay de Jason e Lucia"
+        >
+          <source src="/images/characters/Vídeo sem título ‐ Feito com o Clipchamp.mp4" type="video/mp4">
+          <!-- Fallback para navegadores que não suportam video -->
+          <img 
+            src="/images/jason-lucia-gameplay.jpg" 
+            alt="Jason e Lucia em gameplay"
+            class=" shadow-2xl max-h-[500px]"
+          >
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Mapa Expandido -->
+<section class="py-28 bg-gradient-to-b from-gray-900 to-gray-800 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-20 animate-on-scroll">
+      <h2 class="text-5xl font-bold text-gold-400 font-bebas tracking-wide">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">O MAPA DE GTA VI</span>
+      </h2>
+      <div class="w-24 h-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mt-6 rounded-full"></div>
+    </div>
     
-    <div class="z-10 text-center px-4 animate-fadeIn">
-      <img src="/images/gta6-logo.png" alt="GTA 6 Logo" class="mx-auto w-64 md:w-96 mb-8 drop-shadow-lg hover:scale-105 transition-transform duration-500">
+    <!-- Seção Principal do Mapa -->
+    <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+      <div class="order-2 md:order-1 space-y-8 animate-from-right">
+        <div class="group">
+          <h3 class="text-3xl font-bold mb-6 text-white flex items-center">
+            <span class="w-6 h-6 bg-gradient-to-r from-cyan-500 to-blue-600 mr-4 rounded-full"></span>
+            Vice City e Além
+          </h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            O mapa de GTA VI será o maior e mais detalhado da série, apresentando uma versão ultra-realista de Vice City e seus arredores exóticos.
+          </p>
+          
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-cyan-400 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">Praias expansivas com atividades aquáticas e mergulho</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-cyan-400 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">Pântanos dos Everglades com vida selvagem interativa</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-cyan-400 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">Ilhas tropicais secretas acessíveis por barco ou avião</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-cyan-400 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">Versão completa do arquipélago das Florida Keys</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-cyan-400 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">Centro urbano com mais de 50 interiores exploráveis</span>
+            </li>
+          </ul>
+        </div>
+      </div>
       
-      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white/90 font-light tracking-wide leading-relaxed">
-        O próximo capítulo da saga mais aguardada está chegando. Prepare-se para <span class="font-bold text-yellow-400">Vice City 2.0</span>!
-      </p>
+      <div class="order-1 md:order-2 flex justify-center transform hover:scale-[1.01] transition duration-500 animate-from-left">
+        <div class="relative group">
+          <img 
+            src="/images/map/gta-vi-map-leak.jpg" 
+            alt="Mapa detalhado de GTA VI" 
+            class="rounded-xl shadow-2xl max-h-[600px] border-4 border-cyan-500/20 hover:border-cyan-500/40 transition-all"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end p-6">
+            <span class="text-white text-lg font-medium">Clique para ampliar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Galeria de Locais -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <h3 class="text-4xl font-bold text-white font-bebas tracking-wide">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">LOCAIS ICÔNICOS</span>
+      </h3>
+      <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Explore os pontos mais marcantes do novo mundo de GTA VI</p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 animate-scale-in">
+        <div class="relative h-64 overflow-hidden">
+          <img 
+            src="/images/map/downtown.jpg" 
+            alt="Centro de Vice City" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-transparent to-transparent"></div>
+        </div>
+        <div class="absolute bottom-0 left-0 p-6 w-full">
+          <h4 class="text-2xl font-bold text-white mb-2">Downtown Vice City</h4>
+          <p class="text-gray-300">Arranha-céus modernos, tráfego intenso e vida noturna vibrante.</p>
+          <div class="mt-4">
+            <span class="inline-block px-3 py-1 bg-cyan-600/30 text-cyan-400 rounded-full text-sm font-medium">Área Urbana</span>
+          </div>
+        </div>
+      </div>
       
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-        <!-- Botão 1 - Trailer -->
-        <a href="https://www.youtube.com/watch?v=ae-mpZQLM7w" class="w-full sm:w-auto">
-          <button class="btn btn-primary bg-red-600 hover:bg-red-700 border-none px-8 py-3 text-lg w-full sm:w-70">
-            <i class="fas fa-play mr-2"></i> Assista ao Trailer
+      <!-- Card 2 -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 animate-scale-in" style="transition-delay: 0.2s">
+        <div class="relative h-64 overflow-hidden">
+          <img 
+            src="/images/map/beach-area.jpg" 
+            alt="Pântanos dos Everglades" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-transparent to-transparent"></div>
+        </div>
+        <div class="absolute bottom-0 left-0 p-6 w-full">
+          <h4 class="text-2xl font-bold text-white mb-2">Os Pântanos</h4>
+          <p class="text-gray-300">Áreas selvagens cheias de jacarés, acampamentos secretos e mistérios.</p>
+          <div class="mt-4">
+            <span class="inline-block px-3 py-1 bg-cyan-600/30 text-cyan-400 rounded-full text-sm font-medium">Natureza</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 animate-scale-in" style="transition-delay: 0.4s">
+        <div class="relative h-64 overflow-hidden">
+          <img 
+            src="/images/map/vice-beach.jpg" 
+            alt="Praia de Vice City" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-transparent to-transparent"></div>
+        </div>
+        <div class="absolute bottom-0 left-0 p-6 w-full">
+          <h4 class="text-2xl font-bold text-white mb-2">Vice Beach</h4>
+          <p class="text-gray-300">Praias de areia branca, clubes exclusivos e propriedades milionárias.</p>
+          <div class="mt-4">
+            <span class="inline-block px-3 py-1 bg-cyan-600/30 text-cyan-400 rounded-full text-sm font-medium">Lazer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Mecânicas de Jogo -->
+<section class="py-28 bg-gradient-to-b from-gray-900 to-gray-800 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-20 animate-on-scroll">
+      <h2 class="text-5xl font-bold text-gold-400 font-bebas tracking-wide">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600">NOVAS MECÂNICAS</span>
+      </h2>
+      <div class="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto mt-6 rounded-full"></div>
+      <p class="text-gray-400 mt-6 max-w-2xl mx-auto">Tecnologia de ponta que redefine a experiência de mundo aberto</p>
+    </div>
+    
+    <!-- Seção de IA -->
+    <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
+      <div class="space-y-8 animate-from-left">
+        <div class="group">
+          <h3 class="text-3xl font-bold mb-6 text-white flex items-center">
+            <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mr-4 flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            Sistema de NPCs Revolucionário
+          </h3>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            GTA VI apresenta NPCs com IA de última geração que criam interações nunca vistas antes em jogos de mundo aberto.
+          </p>
+          
+          <ul class="space-y-4 mt-6">
+            <li class="flex items-start">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-600 p-1 rounded-full mr-4 flex-shrink-0">
+                <div class="bg-gray-900 rounded-full p-1">
+                  <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="text-gray-300">Memória persistente - NPCs lembram suas ações por semanas</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-600 p-1 rounded-full mr-4 flex-shrink-0">
+                <div class="bg-gray-900 rounded-full p-1">
+                  <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="text-gray-300">Rotinas dinâmicas com mais de 500 padrões de comportamento únicos</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-600 p-1 rounded-full mr-4 flex-shrink-0">
+                <div class="bg-gray-900 rounded-full p-1">
+                  <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="text-gray-300">Sistema de reputação que afeta todas as interações no jogo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="flex justify-center transform hover:scale-[1.01] transition duration-500 animate-from-right">
+        <div class="relative group">
+          <img 
+            src="/images/npc-ai.jpg" 
+            alt="IA avançada de NPCs em GTA VI" 
+            class="rounded-xl shadow-2xl max-h-[500px] border-4 border-purple-500/20 hover:border-purple-500/40 transition-all"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end p-6">
+            <span class="text-white text-lg font-medium">Tecnologia de IA de próxima geração</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Seção de Atividades -->
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="order-1 md:order-2 flex justify-center animate-from-right">
+        <div class="relative group">
+          <img 
+            src="/images/heist-mechanics.jpg" 
+            alt="Sistema de assaltos em GTA VI" 
+            class="rounded-xl shadow-2xl max-h-[500px] border-4 border-pink-500/20 hover:border-pink-500/40 transition-all"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end p-6">
+            <span class="text-white text-lg font-medium">Assaltos complexos com múltiplas abordagens</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="order-2 md:order-1 space-y-8 animate-from-left">
+        <h3 class="text-3xl font-bold text-white flex items-center">
+          <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mr-4 flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+            </svg>
+          </div>
+          Atividades e Conteúdo Secundário
+        </h3>
+        
+        <div class="space-y-4">
+          <!-- Accordion Item 1 -->
+          <div class="collapse collapse-plus bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl hover:border-purple-500/50 transition-all animate-on-scroll">
+            <input type="radio" name="game-accordion" checked="checked" /> 
+            <div class="collapse-title text-xl font-medium text-white flex items-center">
+              <svg class="w-5 h-5 mr-3 text-purple-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+              Crimes Dinâmicos
+            </div>
+            <div class="collapse-content"> 
+              <p class="text-gray-300">Planeje assaltos complexos com múltiplas abordagens, recrute especialistas para sua equipe e enfrente consequências que mudam o mundo do jogo.</p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="badge badge-outline text-purple-400 border-purple-400/40">Novo</span>
+                <span class="badge badge-outline text-pink-400 border-pink-400/40">Sistema Complexo</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Accordion Item 2 -->
+          <div class="collapse collapse-plus bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl hover:border-purple-500/50 transition-all animate-on-scroll" style="transition-delay: 0.1s">
+            <input type="radio" name="game-accordion" /> 
+            <div class="collapse-title text-xl font-medium text-white flex items-center">
+              <svg class="w-5 h-5 mr-3 text-purple-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+              Sistema de Empregos
+            </div>
+            <div class="collapse-content"> 
+              <p class="text-gray-300">Trabalhe em empregos legítimos para lavar dinheiro sujo, ganhar acesso a áreas restritas ou estabelecer contatos valiosos no submundo.</p>
+              <div class="mt-3">
+                <span class="badge badge-outline text-blue-400 border-blue-400/40">Simulação Realista</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Accordion Item 3 -->
+          <div class="collapse collapse-plus bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl hover:border-purple-500/50 transition-all animate-on-scroll" style="transition-delay: 0.2s">
+            <input type="radio" name="game-accordion" /> 
+            <div class="collapse-title text-xl font-medium text-white flex items-center">
+              <svg class="w-5 h-5 mr-3 text-purple-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+              Vida Social
+            </div>
+            <div class="collapse-content"> 
+              <p class="text-gray-300">Construa relacionamentos dinâmicos com NPCs que afetam a narrativa principal, oferecem missões exclusivas e benefícios estratégicos.</p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="badge badge-outline text-green-400 border-green-400/40">RPG</span>
+                <span class="badge badge-outline text-yellow-400 border-yellow-400/40">Narrativa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Sistema de Tráfego -->
+<section class="py-28 bg-gradient-to-b from-gray-900 to-gray-800 px-6">
+  <div class="max-w-7xl mx-auto">
+    <!-- Título Principal -->
+    <div class="text-center mb-20 animate-on-scroll">
+      <h2 class="text-5xl font-bold text-gold-400 font-bebas tracking-wide">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">TRÁFEGO E VEÍCULOS</span>
+      </h2>
+      <div class="w-24 h-1.5 bg-gradient-to-r from-red-500 to-orange-500 mx-auto mt-6 rounded-full"></div>
+      <p class="text-gray-400 mt-6 max-w-2xl mx-auto">Um sistema de transporte revolucionário que traz vida às ruas de Vice City</p>
+    </div>
+
+    <!-- Seção de Tráfego -->
+    <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
+      <div class="space-y-10 animate-from-left">
+        <!-- Sistema de Tráfego -->
+        <div class="group">
+          <h3 class="text-3xl font-bold mb-6 text-white flex items-center">
+            <div class="w-8 h-8 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mr-4 flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+              </svg>
+            </div>
+            Sistema de Tráfego Realista
+          </h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            GTA VI apresenta um sistema de tráfego completamente reconstruído que redefine o realismo em jogos de mundo aberto.
+          </p>
+          
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <div class="bg-gradient-to-r from-red-500 to-orange-500 p-1 rounded-full mr-4 flex-shrink-0">
+                <div class="bg-gray-900 rounded-full p-1">
+                  <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="text-gray-300">Padrões de tráfego dinâmicos baseados em horário e localização</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-gradient-to-r from-red-500 to-orange-500 p-1 rounded-full mr-4 flex-shrink-0">
+                <div class="bg-gray-900 rounded-full p-1">
+                  <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="text-gray-300">Reações realistas a condições climáticas e eventos inesperados</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-gradient-to-r from-red-500 to-orange-500 p-1 rounded-full mr-4 flex-shrink-0">
+                <div class="bg-gray-900 rounded-full p-1">
+                  <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="text-gray-300">Sistema de perseguição policial completamente reformulado</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Novos Veículos -->
+        <div class="group pt-8">
+          <h3 class="text-3xl font-bold mb-6 text-white flex items-center">
+            <div class="w-8 h-8 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mr-4 flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+              </svg>
+            </div>
+            Frota de Veículos
+          </h3>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Mais de 500 veículos meticulosamente modelados, desde supercarros elétricos até aeronaves pessoais, todos com física aprimorada e sistemas de customização inéditos.
+          </p>
+        </div>
+      </div>
+      
+      <div class="flex justify-center transform hover:scale-[1.01] transition duration-500 animate-from-right">
+        <div class="relative group">
+          <img 
+            src="/images/traffic-system.jpg" 
+            alt="Sistema de tráfego em GTA VI" 
+            class="rounded-xl shadow-2xl max-h-[600px] border-4 border-orange-500/20 hover:border-orange-500/40 transition-all"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end p-6">
+            <span class="text-white text-lg font-medium">Tráfego vivo que reage ao seu comportamento</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Galeria de Veículos -->
+    <div class="mt-24">
+      <div class="text-center mb-16 animate-on-scroll">
+        <h3 class="text-4xl font-bold text-white font-bebas tracking-wide">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">VEÍCULOS CONFIRMADOS</span>
+        </h3>
+        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Uma amostra da impressionante variedade de veículos disponíveis</p>
+      </div>
+
+      <!-- Carrossel Aprimorado -->
+      <div class="carousel rounded-2xl overflow-hidden shadow-2xl animate-scale-in">
+        <!-- Slide 1 -->
+        <div id="slide1" class="carousel-item relative w-full h-[500px]">
+          <img src="/images/vehicles/sport-car.jpg" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-8">
+            <h4 class="text-3xl font-bold text-white">Pfister Neon</h4>
+            <p class="text-gray-300 mt-2">Supercarro elétrico com aceleração 0-100km/h em 2.3s</p>
+          </div>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide4" class="btn btn-circle btn-outline btn-lg border-white/30 hover:bg-orange-500/50 hover:border-orange-500">❮</a> 
+            <a href="#slide2" class="btn btn-circle btn-outline btn-lg border-white/30 hover:bg-orange-500/50 hover:border-orange-500">❯</a>
+          </div>
+        </div> 
+        
+        <!-- Slide 2 -->
+        <div id="slide2" class="carousel-item relative w-full h-[500px]">
+          <img src="/images/vehicles/plane.jpg" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-8">
+            <h4 class="text-3xl font-bold text-white">Buckingham Luxor</h4>
+            <p class="text-gray-300 mt-2">Jato executivo com interior totalmente personalizável</p>
+          </div>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" class="btn btn-circle btn-outline btn-lg border-white/30 hover:bg-orange-500/50 hover:border-orange-500">❮</a> 
+            <a href="#slide3" class="btn btn-circle btn-outline btn-lg border-white/30 hover:bg-orange-500/50 hover:border-orange-500">❯</a>
+          </div>
+        </div> 
+        
+        <!-- Slide 3 -->
+        <div id="slide3" class="carousel-item relative w-full h-[500px]">
+          <img src="/images/vehicles/motorcycle.jpg" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-8">
+            <h4 class="text-3xl font-bold text-white">Shitzu Hakuchou</h4>
+            <p class="text-gray-300 mt-2">Moto esportiva com novo sistema de física de inclinação</p>
+          </div>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" class="btn btn-circle btn-outline btn-lg border-white/30 hover:bg-orange-500/50 hover:border-orange-500">❮</a> 
+            <a href="#slide4" class="btn btn-circle btn-outline btn-lg border-white/30 hover:bg-orange-500/50 hover:border-orange-500">❯</a>
+          </div>
+        </div> 
+        
+        <!-- Slide 4 -->
+        <div id="slide4" class="carousel-item relative w-full h-[500px]">
+          <img src="/images/vehicles/boat.jpg" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-8">
+            <h4 class="text-3xl font-bold text-white">Pegassi Speeder</h4>
+            <p class="text-gray-300 mt-2">Lancha de luxo com sistema de navegação aprimorado</p>
+          </div>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" class="btn btn-circle btn-outline btn-lg border-white/30 hover:bg-orange-500/50 hover:border-orange-500">❮</a> 
+            <a href="#slide1" class="btn btn-circle btn-outline btn-lg border-white/30 hover:bg-orange-500/50 hover:border-orange-500">❯</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicadores de Slide -->
+      <div class="flex justify-center w-full py-6 gap-4">
+        <a href="#slide1" class="w-3 h-3 rounded-full bg-orange-500/50 hover:bg-orange-500 transition-all"></a> 
+        <a href="#slide2" class="w-3 h-3 rounded-full bg-orange-500/50 hover:bg-orange-500 transition-all"></a> 
+        <a href="#slide3" class="w-3 h-3 rounded-full bg-orange-500/50 hover:bg-orange-500 transition-all"></a> 
+        <a href="#slide4" class="w-3 h-3 rounded-full bg-orange-500/50 hover:bg-orange-500 transition-all"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Multiplayer -->
+<section class="py-28 bg-gradient-to-b from-gray-900 to-gray-800 px-6">
+  <div class="max-w-7xl mx-auto">
+    <!-- Título Principal -->
+    <div class="text-center mb-20 animate-on-scroll">
+      <h2 class="text-5xl font-bold text-gold-400 font-bebas tracking-wide">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">GTA ONLINE 2.0</span>
+      </h2>
+      <div class="w-24 h-1.5 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mt-6 rounded-full"></div>
+      <p class="text-gray-400 mt-6 max-w-2xl mx-auto">A revolução do multiplayer em mundo aberto</p>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <!-- Imagem -->
+      <div class="flex justify-center transform hover:scale-[1.01] transition duration-500 order-1 animate-from-left">
+        <div class="relative group">
+          <img 
+            src="/images/gta-online-2.jpg" 
+            alt="GTA Online 2.0" 
+            class="rounded-xl shadow-2xl max-h-[600px] border-4 border-green-500/20 hover:border-green-500/40 transition-all"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end p-6">
+            <span class="text-white text-lg font-medium">Experimente um mundo compartilhado em constante evolução</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Texto e Recursos -->
+      <div class="space-y-10 order-2 animate-from-right">
+        <h3 class="text-3xl font-bold text-white flex items-center">
+          <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mr-4 flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          A Próxima Geração do Multiplayer
+        </h3>
+        
+        <p class="text-gray-300 text-lg leading-relaxed">
+          O sucessor do GTA Online redefine completamente a experiência multiplayer em mundo aberto com tecnologia de última geração e sistemas inovadores.
+        </p>
+        
+        <div class="space-y-6 mt-8">
+          <!-- Recurso 1 -->
+          <div class="group flex items-start p-6 bg-gray-800/50 rounded-xl hover:bg-gray-800/70 transition-all border border-gray-700 hover:border-green-500/30 animate-on-scroll">
+            <div class="bg-gradient-to-r from-green-500 to-blue-500 p-2 rounded-lg mr-6 flex-shrink-0 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-white mb-2">Sessões Persistentes</h4>
+              <p class="text-gray-400">Mundo compartilhado que evolui continuamente, mesmo quando você está offline, com eventos globais que moldam o ecossistema do jogo.</p>
+            </div>
+          </div>
+          
+          <!-- Recurso 2 -->
+          <div class="group flex items-start p-6 bg-gray-800/50 rounded-xl hover:bg-gray-800/70 transition-all border border-gray-700 hover:border-green-500/30 animate-on-scroll" style="transition-delay: 0.1s">
+            <div class="bg-gradient-to-r from-green-500 to-blue-500 p-2 rounded-lg mr-6 flex-shrink-0 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-white mb-2">Economia Dinâmica</h4>
+              <p class="text-gray-400">Sistema econômico complexo onde preços flutuam baseados em oferta e demanda real dos jogadores, criando oportunidades únicas de investimento.</p>
+            </div>
+          </div>
+          
+          <!-- Recurso 3 -->
+          <div class="group flex items-start p-6 bg-gray-800/50 rounded-xl hover:bg-gray-800/70 transition-all border border-gray-700 hover:border-green-500/30 animate-on-scroll" style="transition-delay: 0.2s">
+            <div class="bg-gradient-to-r from-green-500 to-blue-500 p-2 rounded-lg mr-6 flex-shrink-0 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-white mb-2">Negócios Cooperativos</h4>
+              <p class="text-gray-400">Construa e gerencie impérios criminosos com amigos em escalas sem precedentes, desde pequenas operações até megacorporações do crime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <!-- Chamada para Ação Premium -->
+    <section class="relative py-28 bg-gradient-to-r from-primary-900 to-primary-700 overflow-hidden animate-fade-in">
+      <!-- Efeitos decorativos -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0 bg-[url('/images/-pattern.png')] bg-[length:40px_40px]"></div>
+      </div>
+      <div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-400 rounded-full opacity-20"></div>
+      <div class="absolute -left-20 -bottom-20 w-72 h-72 bg-accent rounded-full opacity-15"></div>
+      
+      <div class="max-w-5xl mx-auto text-center px-6 relative z-10">
+        <!-- Título com efeito -->
+        <h2 class="text-5xl font-bold mb-6 font-bebas tracking-wide text-white drop-shadow-lg">
+          <span class="relative inline-block">
+            FIQUE ATUALIZADO
+            <span class="absolute bottom-0 left-0 w-full h-1.5 bg-accent transform origin-left transition-all duration-500 scale-x-0 group-hover:scale-x-100"></span>
+          </span>
+        </h2>
+        
+        <!-- Subtítulo -->
+        <p class="text-2xl mb-10 text-primary-100 max-w-3xl mx-auto leading-relaxed">
+          Receba as <span class="font-semibold text-white">notícias exclusivas</span>, atualizações e conteúdos especiais sobre GTA VI diretamente no seu e-mail
+        </p>
+        
+        <!-- Formulário Premium -->
+        <div class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+          <div class="relative flex-grow">
+            <input 
+              type="email" 
+              placeholder="Seu  e-mail" 
+              class="w-full px-6 py-4 rounded-full border-0 text-gray-900 shadow-xl focus:ring-2 focus:ring-accent focus:outline-none transition-all duration-300 placeholder-gray-500"
+            >
+          </div>
+          
+          <button class="px-8 py-4 bg-accent hover:bg-accent-600 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent/30 flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+            CADASTRAR
           </button>
-        </a>
-        
-        <!-- Botão 2 - Pré-venda -->
-        <button class="btn btn-outline text-white hover:bg-white hover:text-gray-900 border-white px-8 py-3 text-lg w-full sm:w-auto">
-          Pré-venda Indisponível
-        </button>
-      </div>
-    </div>
-  </section>
-
-  
-  <section class="py-20 bg-gradient-to-b from-gray-800 to-gray-900">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4 text-white">
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-yellow-500">PERSONAGENS</span>
-        </h2>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">Conheça os protagonistas que vão dominar as ruas de Vice City</p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Personagem 1 -->
-        <div class="card bg-gray-700/80 hover:bg-gray-700 shadow-xl transition-all duration-300 group overflow-hidden">
-          <figure class="relative overflow-hidden h-80">
-            <img src="/images/characters/lucia.jpg" alt="Lucia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          </figure>
-          <div class="card-body relative z-10">
-            <h3 class="card-title text-2xl font-bold text-red-500">LUCIA</h3>
-            <p class="text-gray-300">A primeira protagonista feminina da série. Esperta, corajosa e implacável.</p>
-            <div class="card-actions justify-end mt-4">
-              <button class="btn btn-sm btn-primary bg-red-600 hover:bg-red-700 border-none px-6 transform hover:-translate-y-1 transition-all">
-                DETALHES
-              </button>
-            </div>
-          </div>
         </div>
         
-        <!-- Personagem 2 -->
-        <div class="card bg-gray-700/80 hover:bg-gray-700 shadow-xl transition-all duration-300 group overflow-hidden">
-          <figure class="relative overflow-hidden h-80">
-            <img src="/images/characters/jason.jpg" alt="Jason" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          </figure>
-          <div class="card-body relative z-10">
-            <h3 class="card-title text-2xl font-bold text-blue-400">JASON</h3>
-            <p class="text-gray-300">Ex-militar com conexões no submundo. O parceiro perfeito para crimes ousados.</p>
-            <div class="card-actions justify-end mt-4">
-              <button class="btn btn-sm btn-primary bg-red-600 hover:bg-red-700 border-none px-6 transform hover:-translate-y-1 transition-all">
-                DETALHES
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Personagem 3 -->
-        <div class="card bg-gray-700/80 hover:bg-gray-700 shadow-xl transition-all duration-300 group overflow-hidden">
-          <figure class="relative overflow-hidden h-80">
-            <img src="/images/characters/ricardo.jpg" alt="Ricardo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          </figure>
-          <div class="card-body relative z-10">
-            <h3 class="card-title text-2xl font-bold text-yellow-400">BOOBIE IKE</h3>
-            <p class="text-gray-300">Líder do cartel de Vice City. Charmoso, mas mortal quando traído.</p>
-            <div class="card-actions justify-end mt-4">
-              <button class="btn btn-sm btn-primary bg-red-600 hover:bg-red-700 border-none px-6 transform hover:-translate-y-1 transition-all">
-                DETALHES
-              </button>
-            </div>
-          </div>
-        </div>
+        <!-- Texto de segurança -->
+        <p class="mt-6 text-sm text-primary-200 opacity-80">
+          <svg class="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+          </svg>
+          Seus dados estão seguros conosco. Nós odiamos spam tanto quanto você.
+        </p>
       </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
-    <!-- Efeito de fundo -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute inset-0 bg-[url('/images/map-pattern.png')]"></div>
-    </div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-yellow-500">EXPLORE VICE CITY 2.0</span>
-        </h2>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">Descubra o mapa mais detalhado e vivo da história da franquia</p>
-      </div>
-      
-      <!-- Carrossel Moderno -->
-      <div class="relative h-[500px] rounded-xl overflow-hidden shadow-2xl mb-12">
-        <div class="absolute inset-0 bg-gradient-to-r from-black/30 to-black/10 z-10"></div>
-        <div id="map-carousel" class="h-full w-full flex transition-transform duration-700 ease-in-out">
-          <div class="flex-shrink-0 w-full h-full">
-            <img src="/images/map/vice-city-overview.jpg" alt="Vista aérea" class="w-full h-full object-cover">
-          </div>
-          <div class="flex-shrink-0 w-full h-full">
-            <img src="/images/map/beach-area.jpg" alt="Praia" class="w-full h-full object-cover">
-          </div>
-          <div class="flex-shrink-0 w-full h-full">
-            <img src="/images/map/downtown.jpg" alt="Centro" class="w-full h-full object-cover">
-          </div>
-        </div>
-      </div>
-      
-      <!-- Descrição do Mapa -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div class="bg-gray-800/50 p-8 rounded-xl backdrop-blur-sm border border-gray-700/50">
-          <h3 class="text-2xl font-bold text-red-500 mb-6 flex items-center">
-            <i class="fas fa-map-marked-alt mr-3"></i> LOCAIS ICÔNICOS
-          </h3>
-          <ul class="space-y-4">
-            <li class="flex items-start">
-              <div class="bg-yellow-400/10 p-2 rounded-full mr-4">
-                <i class="fas fa-umbrella-beach text-yellow-400"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-white">MALIBU BEACH</h4>
-                <p class="text-gray-300">Praia com bares exclusivos e atividades aquáticas radicais</p>
-              </div>
-            </li>
-            <li class="flex items-start">
-              <div class="bg-blue-400/10 p-2 rounded-full mr-4">
-                <i class="fas fa-building text-blue-400"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-white">DOWNTOWN VICE</h4>
-                <p class="text-gray-300">Arranha-céus imponentes e lojas de luxo internacionais</p>
-              </div>
-            </li>
-            <li class="flex items-start">
-              <div class="bg-green-500/10 p-2 rounded-full mr-4">
-                <i class="fas fa-tree text-green-500"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-white">EVERGLADES</h4>
-                <p class="text-gray-300">Pântanos perigosos repletos de esconderijos secretos</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-gray-800/50 p-8 rounded-xl backdrop-blur-sm border border-gray-700/50">
-          <h3 class="text-2xl font-bold text-red-500 mb-6 flex items-center">
-            <i class="fas fa-star mr-3"></i> NOVIDADES
-          </h3>
-          <p class="text-white mb-6">O mapa será <span class="font-bold text-yellow-400">3x maior que GTA V</span>, com detalhes nunca antes vistos:</p>
-          <ul class="space-y-4">
-            <li class="flex items-start">
-              <div class="bg-green-500/10 p-2 rounded-full mr-4">
-                <i class="fas fa-check text-green-500"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-white">INTERIORES COMPLETOS</h4>
-                <p class="text-gray-300">Explore shoppings, aeroportos e prédios em detalhes</p>
-              </div>
-            </li>
-            <li class="flex items-start">
-              <div class="bg-green-500/10 p-2 rounded-full mr-4">
-                <i class="fas fa-check text-green-500"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-white">NPCs ÚNICOS</h4>
-                <p class="text-gray-300">Cada personagem tem rotinas e reações realistas</p>
-              </div>
-            </li>
-            <li class="flex items-start">
-              <div class="bg-green-500/10 p-2 rounded-full mr-4">
-                <i class="fas fa-check text-green-500"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-white">EVENTOS DINÂMICOS</h4>
-                <p class="text-gray-300">Assaltos, festas e eventos aleatórios em toda a cidade</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- Seção de Mecânicas Revolucionárias -->
-<section class="py-20 bg-gradient-to-b from-gray-900 to-gray-800 relative overflow-hidden">
-  <!-- Efeito de fundo -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute inset-0 bg-[url('/images/dot-pattern.png')]"></div>
-  </div>
-  
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold mb-4">
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-yellow-500">MECÂNICAS REVOLUCIONÁRIAS</span>
-      </h2>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto">Tecologia de ponta que redefine o mundo aberto</p>
-    </div>
-    
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <!-- Card 1 - NPCs Inteligentes -->
-      <div class="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-red-500/30 transition-all duration-500 hover:-translate-y-2 shadow-2xl">
-        <div class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        
-        <div class="p-8">
-          <div class="mb-6 flex justify-center">
-            <div class="w-20 h-20 rounded-full bg-red-600/10 flex items-center justify-center group-hover:bg-red-600/20 transition-all duration-500">
-              <i class="fas fa-brain text-4xl text-red-500 group-hover:scale-110 transition-transform"></i>
-            </div>
-          </div>
-          
-          <h3 class="text-2xl font-bold text-center text-white mb-4">NPCs INTELIGENTES</h3>
-          
-          <p class="text-gray-300 text-center mb-6">
-            Os NPCs agora têm comportamentos complexos, reagindo a:
-          </p>
-          
-          <ul class="space-y-3">
-            <li class="flex items-center">
-              <div class="w-6 h-6 rounded-full bg-red-600/20 mr-3 flex items-center justify-center">
-                <i class="fas fa-check text-xs text-red-500"></i>
-              </div>
-              <span class="text-gray-300">Seu estilo de roupa e veículo</span>
-            </li>
-            <li class="flex items-center">
-              <div class="w-6 h-6 rounded-full bg-red-600/20 mr-3 flex items-center justify-center">
-                <i class="fas fa-check text-xs text-red-500"></i>
-              </div>
-              <span class="text-gray-300">Crimes cometidos na região</span>
-            </li>
-            <li class="flex items-center">
-              <div class="w-6 h-6 rounded-full bg-red-600/20 mr-3 flex items-center justify-center">
-                <i class="fas fa-check text-xs text-red-500"></i>
-              </div>
-              <span class="text-gray-300">Reputação do jogador</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Card 2 - Danos Realistas -->
-      <div class="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-blue-500/30 transition-all duration-500 hover:-translate-y-2 shadow-2xl">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        
-        <div class="p-8">
-          <div class="mb-6 flex justify-center">
-            <div class="w-20 h-20 rounded-full bg-blue-600/10 flex items-center justify-center group-hover:bg-blue-600/20 transition-all duration-500">
-              <i class="fas fa-car-crash text-4xl text-blue-400 group-hover:scale-110 transition-transform"></i>
-            </div>
-          </div>
-          
-          <h3 class="text-2xl font-bold text-center text-white mb-4">DANOS REALISTAS</h3>
-          
-          <div class="flex justify-center mb-6">
-            <div class="inline-flex bg-gray-700/80 rounded-full px-4 py-1">
-              <span class="text-sm text-blue-400">Sistema de destruição física</span>
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-2 gap-4">
-            <div class="bg-gray-700/50 rounded-lg p-3 text-center">
-              <i class="fas fa-car-side text-blue-400 mb-1"></i>
-              <p class="text-xs text-gray-300">Pneus furados</p>
-            </div>
-            <div class="bg-gray-700/50 rounded-lg p-3 text-center">
-              <i class="fas fa-fire text-red-400 mb-1"></i>
-              <p class="text-xs text-gray-300">Motores em chamas</p>
-            </div>
-            <div class="bg-gray-700/50 rounded-lg p-3 text-center">
-              <i class="fas fa-glass-whiskey text-yellow-400 mb-1"></i>
-              <p class="text-xs text-gray-300">Vidros estilhaçados</p>
-            </div>
-            <div class="bg-gray-700/50 rounded-lg p-3 text-center">
-              <i class="fas fa-car-side text-green-400 mb-1"></i>
-              <p class="text-xs text-gray-300">Deformações realistas</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 3 - Economia Dinâmica -->
-      <div class="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-yellow-500/30 transition-all duration-500 hover:-translate-y-2 shadow-2xl">
-        <div class="absolute inset-0 bg-gradient-to-br from-yellow-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        
-        <div class="p-8">
-          <div class="mb-6 flex justify-center">
-            <div class="w-20 h-20 rounded-full bg-yellow-600/10 flex items-center justify-center group-hover:bg-yellow-600/20 transition-all duration-500">
-              <i class="fas fa-hand-holding-usd text-4xl text-yellow-400 group-hover:scale-110 transition-transform"></i>
-            </div>
-          </div>
-          
-          <h3 class="text-2xl font-bold text-center text-white mb-4">ECONOMIA DINÂMICA</h3>
-          
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-sm text-gray-400">Preço de imóveis</span>
-            <div class="w-24 bg-gray-700 rounded-full h-2">
-              <div class="bg-gradient-to-r from-yellow-400 to-yellow-600 h-2 rounded-full animate-pulse" style="width: 65%"></div>
-            </div>
-          </div>
-          
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-sm text-gray-400">Mercado ilegal</span>
-            <div class="w-24 bg-gray-700 rounded-full h-2">
-              <div class="bg-gradient-to-r from-red-400 to-red-600 h-2 rounded-full animate-pulse" style="width: 85%"></div>
-            </div>
-          </div>
-          
-          <div class="flex items-center justify-between mb-6">
-            <span class="text-sm text-gray-400">Inflação</span>
-            <div class="w-24 bg-gray-700 rounded-full h-2">
-              <div class="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full animate-pulse" style="width: 45%"></div>
-            </div>
-          </div>
-          
-          <p class="text-gray-300 text-sm text-center">
-            Controle negócios e influencie os preços da cidade com suas ações criminosas
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Seção de Veículos -->
-<section class="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
-  <!-- Efeito de fundo -->
-  <div class="absolute inset-0 bg-[url('/images/vehicle-pattern.png')] opacity-10"></div>
-  
-  <div class="container mx-auto px-4 relative z-10">
-    <!-- Cabeçalho -->
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold mb-4">
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-yellow-500">VEÍCULOS</span>
-      </h2>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto">Domine as ruas, os céus e os mares de Vice City</p>
-    </div>
-
-    <!-- Grid de Veículos -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Veículo 1 - Carro Esportivo -->
-      <div class="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl">
-        <div class="relative overflow-hidden h-64">
-          <img src="/images/vehicles/sport-car.jpg" alt="Carro Esportivo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-4">
-            <span class="inline-block bg-red-600/90 text-white text-xs px-2 py-1 rounded-full">VELOCIDADE MÁXIMA</span>
-          </div>
-        </div>
-        <div class="p-5">
-          <h3 class="text-xl font-bold text-white mb-1">PEGASSI TORERO</h3>
-          <p class="text-sm text-gray-400 mb-3">Supercarro de elite</p>
-          <div class="flex justify-between text-xs text-gray-400">
-            <span><i class="fas fa-tachometer-alt mr-1 text-red-500"></i> 320 km/h</span>
-            <span><i class="fas fa-gas-pump mr-1 text-yellow-500"></i> Gasolina</span>
-            <span><i class="fas fa-car mr-1 text-blue-400"></i> 2 lugares</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Veículo 2 - Moto -->
-      <div class="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl">
-        <div class="relative overflow-hidden h-64">
-          <img src="/images/vehicles/motorcycle.jpg" alt="Moto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-4">
-            <span class="inline-block bg-blue-600/90 text-white text-xs px-2 py-1 rounded-full">AGILIDADE</span>
-          </div>
-        </div>
-        <div class="p-5">
-          <h3 class="text-xl font-bold text-white mb-1">SHITZU HAKUCHOU</h3>
-          <p class="text-sm text-gray-400 mb-3">Moto esportiva</p>
-          <div class="flex justify-between text-xs text-gray-400">
-            <span><i class="fas fa-tachometer-alt mr-1 text-red-500"></i> 280 km/h</span>
-            <span><i class="fas fa-gas-pump mr-1 text-yellow-500"></i> Gasolina</span>
-            <span><i class="fas fa-motorcycle mr-1 text-blue-400"></i> 1 lugar</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Veículo 3 - Avião -->
-      <div class="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl">
-        <div class="relative overflow-hidden h-64">
-          <img src="/images/vehicles/plane.jpg" alt="Avião" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-4">
-            <span class="inline-block bg-yellow-600/90 text-white text-xs px-2 py-1 rounded-full">AERONAVE</span>
-          </div>
-        </div>
-        <div class="p-5">
-          <h3 class="text-xl font-bold text-white mb-1">MAMMOTH HYDRA</h3>
-          <p class="text-sm text-gray-400 mb-3">Caça a jato militar</p>
-          <div class="flex justify-between text-xs text-gray-400">
-            <span><i class="fas fa-tachometer-alt mr-1 text-red-500"></i> 900 km/h</span>
-            <span><i class="fas fa-gas-pump mr-1 text-yellow-500"></i> Querosene</span>
-            <span><i class="fas fa-fighter-jet mr-1 text-blue-400"></i> 1 lugar</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Veículo 4 - Barco -->
-      <div class="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-green-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl">
-        <div class="relative overflow-hidden h-64">
-          <img src="/images/vehicles/boat.jpg" alt="Barco" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-4">
-            <span class="inline-block bg-green-600/90 text-white text-xs px-2 py-1 rounded-full">NAVEGAÇÃO</span>
-          </div>
-        </div>
-        <div class="p-5">
-          <h3 class="text-xl font-bold text-white mb-1">PEGASSI SPEEDER</h3>
-          <p class="text-sm text-gray-400 mb-3">Lancha de luxo</p>
-          <div class="flex justify-between text-xs text-gray-400">
-            <span><i class="fas fa-tachometer-alt mr-1 text-red-500"></i> 120 km/h</span>
-            <span><i class="fas fa-gas-pump mr-1 text-yellow-500"></i> Diesel</span>
-            <span><i class="fas fa-ship mr-1 text-blue-400"></i> 4 lugares</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Botão Ver Mais -->
-    <div class="text-center mt-12">
-      <button class="btn btn-outline border-2 border-white/50 hover:border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 text-lg font-bold tracking-wider transform hover:-translate-y-1 transition-all duration-300 group">
-        <span class="group-hover:text-gray-900">VER TODOS OS VEÍCULOS</span>
-        <i class="fas fa-chevron-right ml-2 group-hover:text-gray-900 group-hover:translate-x-1 transition-transform"></i>
-      </button>
-    </div>
-  </div>
-</section>
+    </section>
 
   <!-- Assistente Virtual -->
   <%- include('../partials/chatbot') %>
 
-
   <!--footer-->
   <%- include('../partials/footer') %>
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="/js/chatbot.js"></script>
   <script src="/js/script.js"></script>
+  <script>
+    // Configuração das animações com GSAP e ScrollTrigger
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inicializa o GSAP
+      gsap.registerPlugin(ScrollTrigger);
+      
+      // Configura as animações para elementos com a classe animate-on-scroll
+      gsap.utils.toArray('.animate-on-scroll').forEach(element => {
+        gsap.fromTo(element, 
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+      
+      // Configura as animações para elementos com a classe animate-fade-in
+      gsap.utils.toArray('.animate-fade-in').forEach(element => {
+        gsap.fromTo(element, 
+          { opacity: 0 },
+          {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+      
+      // Configura as animações para elementos com a classe animate-scale-in
+      gsap.utils.toArray('.animate-scale-in').forEach(element => {
+        gsap.fromTo(element, 
+          { opacity: 0, scale: 0.95 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+      
+      // Configura as animações para elementos com a classe animate-from-left
+      gsap.utils.toArray('.animate-from-left').forEach(element => {
+        gsap.fromTo(element, 
+          { opacity: 0, x: -50 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+      
+      // Configura as animações para elementos com a classe animate-from-right
+      gsap.utils.toArray('.animate-from-right').forEach(element => {
+        gsap.fromTo(element, 
+          { opacity: 0, x: 50 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+      
+      // Alternativa para navegadores mais antigos ou sem suporte a GSAP
+      if (typeof gsap === 'undefined') {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animated');
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.animate-on-scroll, .animate-fade-in, .animate-scale-in, .animate-from-left, .animate-from-right').forEach(el => {
+          observer.observe(el);
+        });
+      }
+    });
+  </script>
 </body>
 </html>

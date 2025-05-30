@@ -1,61 +1,93 @@
-
-
-
-
-
-<nav class="bg-gray-900/80 backdrop-blur-md border-b border-gray-700 fixed w-full z-50 p-4 transition-all duration-300 hover:bg-gray-900">
-  <div class="container mx-auto flex justify-between items-center">
-    <!-- Logo e Nome -->
-    <div class="flex items-center space-x-3 group">
-      <img src="/images/logo-nav.webp" alt="GTA 6 Logo" class="w-8 h-8 group-hover:rotate-12 transition-transform">
-      <span class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 to-yellow-500 bg-clip-text text-transparent">
-        GTA VI
-      </span>
-    </div>
-
-    <!-- Links Desktop -->
-    <div class="hidden md:flex space-x-8 items-center">
-      <a href="#" class="nav-link relative group">
-        <span class="text-white group-hover:text-red-500 transition">Início</span>
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></span>
-      </a>
-      <a href="#" class="nav-link relative group">
-        <span class="text-white group-hover:text-red-500 transition">Notícias</span>
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></span>
-      </a>
-      <a href="#" class="nav-link relative group">
-        <span class="text-white group-hover:text-red-500 transition">Galeria</span>
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></span>
-      </a>
-      <a href="#" class="nav-link relative group">
-        <span class="text-white group-hover:text-red-500 transition">FAQ</span>
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></span>
-      </a>
-      <button class="ml-4 btn btn-sm btn-primary bg-red-600 hover:bg-red-700 border-none px-4 py-2 rounded-full transition-transform hover:scale-105">
-        Pré-venda <i class="fas fa-arrow-right ml-1"></i>
-      </button>
-    </div>
-
-    <!-- Menu Mobile -->
-    <div class="md:hidden">
-      <button id="mobile-menu-button" class="text-white hover:text-red-500 focus:outline-none">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </div>
+<!-- Botão de abrir o menu -->
+<div class="menu-icon fixed top-6 right-6 z-50 cursor-pointer group" id="menuButton">
+  <div class="relative w-8 h-6">
+    <span class="absolute block w-full h-[2px] bg-white rounded-full transition-all duration-300 top-0 
+      group-[.active]:top-1/2 group-[.active]:-translate-y-1/2 group-[.active]:rotate-45">
+    </span>
+    <span class="absolute block w-full h-[2px] bg-white rounded-full transition-all duration-300 top-1/2 
+      -translate-y-1/2 group-[.active]:opacity-0">
+    </span>
+    <span class="absolute block w-full h-[2px] bg-white rounded-full transition-all duration-300 bottom-0 
+      group-[.active]:top-1/2 group-[.active]:-translate-y-1/2 group-[.active]:-rotate-45">
+    </span>
   </div>
+</div>
 
-  <!-- Menu Mobile Expandido -->
-  <div id="mobile-menu" class="md:hidden hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 px-6 shadow-lg">
-    <div class="flex flex-col space-y-4">
-      <a href="#" class="text-white hover:text-red-500 py-2 border-b border-gray-700 transition">Início</a>
-      <a href="#" class="text-white hover:text-red-500 py-2 border-b border-gray-700 transition">Notícias</a>
-      <a href="#" class="text-white hover:text-red-500 py-2 border-b border-gray-700 transition">Galeria</a>
-      <a href="#" class="text-white hover:text-red-500 py-2 border-b border-gray-700 transition">FAQ</a>
-      <button class="btn btn-primary bg-red-600 hover:bg-red-700 border-none mt-2 w-full">
-        Pré-venda
-      </button>
-    </div>
+
+<!-- Menu lateral -->
+<nav class="fixed top-0 right-0 h-full w-[280px] md:w-[580px] 
+    bg-gray-900/80 backdrop-blur-lg text-white z-40 
+    transform translate-x-full transition-transform duration-300 ease-in-out  shadow-xl" 
+    id="navMenu">
+
+  <ul class="pt-28 px-10 space-y-8">
+    <li>
+      <a href="#" class="block text-xl font-semibold tracking-widest hover:text-pink-400 
+      transition-colors duration-300">
+        HOME
+      </a>
+    </li>
+    <li>
+      <a href="#" class="block text-xl font-semibold tracking-widest hover:text-pink-400 
+      transition-colors duration-300">
+        SOBRE
+      </a>
+    </li>
+    <li>
+      <a href="#" class="block text-xl font-semibold tracking-widest hover:text-pink-400 
+      transition-colors duration-300">
+        GALERIA
+      </a>
+    </li>
+    <li>
+      <a href="#" class="block text-xl font-semibold tracking-widest hover:text-pink-400 
+      transition-colors duration-300">
+        CONTATO
+      </a>
+    </li>
+  </ul>
+
+  <div class="absolute bottom-6 left-10 text-xs text-gray-400">
+    <p>🌐 Português do Brasil</p>
   </div>
 </nav>
 
 
+<!-- Fundo escuro ao abrir o menu -->
+<div class="overlay fixed top-0 left-0 w-full h-full bg-black/50 z-30 hidden backdrop-blur-sm" id="overlay"></div>
+
+
+
+
+<script>
+  const menuButton = document.getElementById('menuButton');
+  const navMenu = document.getElementById('navMenu');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu() {
+    const isOpen = navMenu.classList.contains('translate-x-0');
+    if (isOpen) {
+      // Fecha o menu
+      navMenu.classList.remove('translate-x-0');
+      navMenu.classList.add('translate-x-full');
+      overlay.classList.add('hidden');
+      menuButton.classList.remove('active');
+    } else {
+      // Abre o menu
+      navMenu.classList.remove('translate-x-full');
+      navMenu.classList.add('translate-x-0');
+      overlay.classList.remove('hidden');
+      menuButton.classList.add('active');
+    }
+  }
+
+  function closeMenu() {
+    navMenu.classList.remove('translate-x-0');
+    navMenu.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+    menuButton.classList.remove('active');
+  }
+
+  menuButton.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', closeMenu);
+</script>
